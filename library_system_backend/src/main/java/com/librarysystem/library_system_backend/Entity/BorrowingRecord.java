@@ -2,8 +2,6 @@ package com.librarysystem.library_system_backend.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -15,24 +13,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class BorrowingRecord {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
 
-    @Column
-    private String phone_number;
+    @Id
+    private Integer inventoryId;
 
     @Column
-    private String password;
+    private String borrowingTime;
 
     @Column
-    private String username;
-
-    @Column
-    private String registaration_time;
-
-    @Column
-    private String last_login_time;
+    private String returnTime;
 }
-

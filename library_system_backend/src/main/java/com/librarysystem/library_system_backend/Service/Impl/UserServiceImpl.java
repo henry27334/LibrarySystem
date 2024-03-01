@@ -30,13 +30,9 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public Boolean query(User user) {
-        int isSuccess = userRepository.query_user(user.getPhone_number(), user.getPassword(), user.getLast_login_time());
-        Boolean loginStatus = false;
-        if (isSuccess != -1) {
-            loginStatus = true;
-        }
-        return loginStatus;
+    public int query(User user) {
+        int userId = userRepository.query_user(user.getPhone_number(), user.getPassword(), user.getLast_login_time());
+        return userId;
     }
 
     @Override

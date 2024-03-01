@@ -8,13 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.librarysystem.library_system_backend.Entity.User;
 import com.librarysystem.library_system_backend.Service.UserService;
 
+import lombok.val;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
-@RestController
+
 @CrossOrigin
+@RestController
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
@@ -31,8 +36,8 @@ public class UserController {
     }
     
     @PostMapping(value = "/login")
-    public boolean query(@RequestBody User user) {
-        Boolean isLogin = userService.query(user);
-        return isLogin;
+    public int query(@RequestBody User user) {
+        int userId = userService.query(user);
+        return userId;
     }
 }

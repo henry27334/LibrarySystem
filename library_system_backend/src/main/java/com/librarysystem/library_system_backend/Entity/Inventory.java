@@ -15,24 +15,17 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class User {
+public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer userId;
+    private Integer inventory_id;
 
     @Column
-    private String phone_number;
+    private String isbn;
 
     @Column
-    private String password;
+    private String store_time;
 
     @Column
-    private String username;
-
-    @Column
-    private String registaration_time;
-
-    @Column
-    private String last_login_time;
+    private Integer status;
 }
-
