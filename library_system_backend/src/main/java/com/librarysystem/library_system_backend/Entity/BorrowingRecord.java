@@ -17,7 +17,7 @@ public class BorrowingRecord {
     @Id
     private Integer userId;
 
-    @Id
+    @Column
     private Integer inventoryId;
 
     @Column

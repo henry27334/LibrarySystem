@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.librarysystem.library_system_backend.Entity.Book;
 import com.librarysystem.library_system_backend.Entity.Inventory;
+import com.librarysystem.library_system_backend.Entity.User;
 import com.librarysystem.library_system_backend.Service.BookService;
 import com.librarysystem.library_system_backend.Service.InventoryService;
 
@@ -15,9 +16,13 @@ import java.util.stream.Collectors;
 
 import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 
@@ -55,11 +60,17 @@ public class BookListController {
             newBookInfo.put("name", newBook.getName());
             newBookInfo.put("author", newBook.getAuthor());
             newBookInfo.put("introduction", newBook.getIntroduction());
+            newBookInfo.put("inventory_id", newInventory.getInventory_id().toString());
             newBookInfo.put("status", BookStatus.values()[newInventory.getStatus()].toString());
             bookList.add(newBookInfo);
         }
 
         return bookList;
+    }
+
+    @PostMapping("/rentbook")
+    public ResponseEntity<?> rentbook(@RequestBody User user){
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
     
 }
