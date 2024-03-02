@@ -1,23 +1,24 @@
 <template>
   <div class="LoginView" style="margin: 20px">
-    <el-form :model="formSignIn" label-width="150px" style="max-width: 460px">
-      <el-form-item label="Phone Number">
-        <el-input v-model="formSignIn.phone_number" 
-                  placeholder="Phone Number" 
-                  maxlength="10" 
-                  @keypress="checkNumber($event)"
-                  show-word-limit></el-input>
-      </el-form-item>
-      <el-form-item label="Password">
-        <el-input v-model="formSignIn.password" placeholder="Password" show-password></el-input>      
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="handleSignIn()">
-          Login
-        </el-button>
-        <!-- <el-button @click="resetForm()">Reset</el-button> -->
-      </el-form-item>
-    </el-form>
+    <el-card class="box-card" style="max-width: 480px; margin: auto;">
+      <el-form :model="formSignIn" label-width="150px" style="max-width: 460px; margin: auto;">
+        <el-form-item label="Phone Number">
+          <el-input v-model="formSignIn.phone_number" 
+                    placeholder="Phone Number" 
+                    maxlength="10" 
+                    @keypress="checkNumber($event)"
+                    show-word-limit></el-input>
+        </el-form-item>
+        <el-form-item label="Password">
+          <el-input v-model="formSignIn.password" placeholder="Password" show-password></el-input>      
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="handleSignIn()">
+            Login
+          </el-button>
+        </el-form-item>
+      </el-form>
+    </el-card>
   </div>
 </template>
 

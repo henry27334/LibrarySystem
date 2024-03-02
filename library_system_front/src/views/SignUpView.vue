@@ -1,32 +1,33 @@
 <template>
     <div class="LoginView" style="margin: 20px">
-      <el-form :model="formSignUp" label-width="150px" style="max-width: 460px">
-        <el-form-item label="Phone Number">
-          <el-input v-model="formSignUp.phone_number" 
-                    placeholder="Enter your phone number" 
-                    maxlength="10" 
-                    @keypress="checkNumber($event)"
-                    show-word-limit>
-          </el-input>
-        </el-form-item>
-        <el-form-item label="Password">
-          <el-input v-model="formSignUp.password" placeholder="Enter your password" show-password></el-input>      
-        </el-form-item>
-        <el-form-item label="Confirm Password">
-          <el-input v-model="formSignUp.confirm_password" placeholder="Enter your password Again" show-password></el-input>      
-        </el-form-item>
-        <el-form-item label="User Name">
-          <el-input v-model="formSignUp.username" placeholder="Enter your name here"></el-input>      
-        </el-form-item>
+      <el-card class="box-card" style="max-width: 480px; margin: auto;">
+        <el-form :model="formSignUp" label-width="150px" style="max-width: 460px">
+          <el-form-item label="Phone Number">
+            <el-input v-model="formSignUp.phone_number" 
+                      placeholder="Enter your phone number" 
+                      maxlength="10" 
+                      @keypress="checkNumber($event)"
+                      show-word-limit>
+            </el-input>
+          </el-form-item>
+          <el-form-item label="Password">
+            <el-input v-model="formSignUp.password" placeholder="Enter your password" show-password></el-input>      
+          </el-form-item>
+          <el-form-item label="Confirm Password">
+            <el-input v-model="formSignUp.confirm_password" placeholder="Enter your password Again" show-password></el-input>      
+          </el-form-item>
+          <el-form-item label="User Name">
+            <el-input v-model="formSignUp.username" placeholder="Enter your name here"></el-input>      
+          </el-form-item>
 
-        <el-form-item>
-          <el-button type="primary" @click="handleSignUp()">
-            Create
-          </el-button>
-          <!-- <el-button @click="resetForm()">Reset</el-button> -->
-        </el-form-item>
-      </el-form>
-  
+          <el-form-item>
+            <el-button type="primary" @click="handleSignUp()">
+              Create
+            </el-button>
+            <!-- <el-button @click="resetForm()">Reset</el-button> -->
+          </el-form-item>
+        </el-form>
+      </el-card >
     </div>
   </template>
   
