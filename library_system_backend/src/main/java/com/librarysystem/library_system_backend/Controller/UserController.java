@@ -40,4 +40,9 @@ public class UserController {
         int userId = userService.query(user);
         return userId;
     }
+
+    @PostMapping(value = "/logout")
+    public void logout(@RequestBody User user) {
+        userService.updateLastLoginTime(user);
+    }
 }

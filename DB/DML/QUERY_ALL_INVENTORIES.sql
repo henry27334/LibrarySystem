@@ -1,0 +1,6 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `QUERY_ALL_INVENTORIES`()
+BEGIN
+	SELECT * FROM `librarysystem`.`inventory`;
+END$$
+DELIMITER ;

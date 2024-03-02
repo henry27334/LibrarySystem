@@ -35,27 +35,10 @@ public class UserServiceImpl implements UserService {
         return userId;
     }
 
+    @Transactional
     @Override
-    public List<User> readAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'readAll'");
+    public void updateLastLoginTime(User user) {
+        userRepository.update_last_login_time(user.getUser_id(), user.getLast_login_time());
     }
 
-    @Override
-    public User read(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'read'");
-    }
-
-    @Override
-    public boolean update(User customer, int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
-    }
-
-    @Override
-    public boolean delete(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
-    }
 }

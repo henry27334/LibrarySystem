@@ -6,4 +6,4 @@ CREATE TABLE `user` (
   `registaration_time` varchar(45) DEFAULT NULL,
   `last_login_time` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

@@ -15,4 +15,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Procedure(procedureName = "QUERY_USER")
     int query_user(String phone_number, String password, String last_login_time); 
+
+    @Procedure(procedureName = "UPDATE_LAST_LOGIN_TIME")
+    void update_last_login_time(int user_id, String last_login_time); 
 }

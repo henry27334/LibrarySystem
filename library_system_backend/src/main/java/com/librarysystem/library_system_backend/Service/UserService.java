@@ -8,13 +8,7 @@ public interface UserService {
     void create(User user);
 
     int query(User user);
-
-    List<User> readAll();
-
-    User read(int id);
     
-    boolean update(User customer, int id);
-
-    boolean delete(int id);
+    void updateLastLoginTime(User customer);
 
 }
