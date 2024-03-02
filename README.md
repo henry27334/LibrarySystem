@@ -3,6 +3,7 @@
 ### Starting Web Server
 ```cmd
 cd library_systen_front
+npm install
 npm run dev
 ```
 
