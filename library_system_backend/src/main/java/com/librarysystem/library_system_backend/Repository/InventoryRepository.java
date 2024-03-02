@@ -14,4 +14,7 @@ public interface InventoryRepository extends JpaRepository<Inventory, Integer>{
     @Procedure(procedureName = "QUERY_ALL_INVENTORIES")
     List<Inventory> query_inventories();
 
+    @Procedure(procedureName = "UPDATE_BOOK_STATUS")
+    int update_book_status(int inventory_id, int book_status);
+
 }

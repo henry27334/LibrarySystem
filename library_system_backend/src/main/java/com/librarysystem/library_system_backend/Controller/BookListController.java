@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class BookListController {
     
     private BookService bookService;
-    private InventoryService InventoryService;
+    private InventoryService inventoryService;
 
     enum BookStatus
     {
@@ -41,15 +41,15 @@ public class BookListController {
      
 
     @Autowired
-    public BookListController(BookService bookService, InventoryService InventoryService) {
+    public BookListController(BookService bookService, InventoryService inventoryService) {
         this.bookService = bookService;
-        this.InventoryService = InventoryService;
+        this.inventoryService = inventoryService;
     }
 
     @GetMapping("/getBookDetail")
     public List<Map<String, String>> getBookDetail() {
         List<Book> books = bookService.queryBooks();
-        List<Inventory> inventories = InventoryService.queryInventories();
+        List<Inventory> inventories = inventoryService.queryInventories();
 
         List<Map<String, String>> bookList = new ArrayList<>();
         for(int i=0; i < books.size(); i++){
@@ -68,9 +68,6 @@ public class BookListController {
         return bookList;
     }
 
-    @PostMapping("/rentbook")
-    public ResponseEntity<?> rentbook(@RequestBody User user){
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
     
+
 }

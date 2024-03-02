@@ -3,6 +3,7 @@ package com.librarysystem.library_system_backend.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.librarysystem.library_system_backend.Entity.Inventory;
+import com.librarysystem.library_system_backend.Entity.User;
 import com.librarysystem.library_system_backend.Service.BookService;
 import com.librarysystem.library_system_backend.Service.InventoryService;
 
@@ -12,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -34,4 +37,15 @@ public class InventoryController {
         return inventories;
     }
     
+    @PostMapping("/rentbook")
+    public int updateRentStatus(@RequestBody Inventory inventory) {
+        int isSuccess = inventoryService.updateBookStatus(inventory.getInventory_id(), 1);
+        return isSuccess;
+    }
+    
+    @PostMapping("/returnbook")
+    public int returnbook(@RequestBody Inventory inventory){
+        int isSuccess = inventoryService.updateBookStatus(inventory.getInventory_id(), 0);
+        return isSuccess;
+    }
 }

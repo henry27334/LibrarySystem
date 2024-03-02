@@ -15,14 +15,14 @@ import lombok.Setter;
 @NoArgsConstructor
 public class BorrowingRecord {
     @Id
-    private Integer userId;
+    private Integer user_id;
 
     @Column
-    private Integer inventoryId;
+    private Integer inventory_id;
 
     @Column
-    private String borrowingTime;
+    private String borrowing_time;
 
     @Column
-    private String returnTime;
+    private String return_time;
 }

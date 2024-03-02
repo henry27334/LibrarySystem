@@ -9,4 +9,7 @@ public interface BorrowingRecordRepository extends JpaRepository<BorrowingRecord
     
     @Procedure(procedureName = "CREATE_BORROWING_RECORD")
     int create_record(int user_id, int inventory_id, String borrowing_time);
+
+    @Procedure(procedureName = "UPDATE_BORROWING_RECORD")
+    int update_record(int user_id, int inventory_id, String return_time);
 }

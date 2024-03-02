@@ -27,5 +27,13 @@ public class InventoryServiceImpl implements InventoryService{
         List<Inventory> inventories = inventoryRepository.query_inventories();
         return inventories;
     }
+
+    @Transactional
+    @Override
+    public int updateBookStatus(int inventoryId, int status) {
+        int isSuccess = inventoryRepository.update_book_status(inventoryId, status);
+        return isSuccess;
+    }
+
     
 }
