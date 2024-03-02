@@ -3,7 +3,7 @@
 ### Starting Web Server
 ```cmd
 cd library_systen_front
-npm run serve
+npm run dev
 ```
 
 ### Start Backend Server
