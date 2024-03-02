@@ -27,7 +27,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping(value = "/createUser")
+    @PostMapping(value = "/queryphonenumber")
+    public int queryPhoneNumber(@RequestBody User user) {
+        int isExist = userService.queryPhoneNumber(user);
+        return isExist;
+    }
+
+    @PostMapping(value = "/createuser")
     public ResponseEntity<?> createUser(@RequestBody User user) {
         userService.create(user);
         return new ResponseEntity<>(HttpStatus.CREATED);

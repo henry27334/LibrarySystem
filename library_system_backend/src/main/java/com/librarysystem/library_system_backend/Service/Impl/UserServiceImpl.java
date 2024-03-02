@@ -23,6 +23,13 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
+    public int queryPhoneNumber(User user) {
+        int isExist = userRepository.query_phone_number(user.getPhone_number());
+        return isExist;
+    }
+
+    @Transactional
+    @Override
     public void create(User user) {
         String salt = PasswordSecurity.addSalt();
         String passwordEncryption = PasswordSecurity.encryptionWithSalt(user.getPassword(), salt);
@@ -49,5 +56,7 @@ public class UserServiceImpl implements UserService {
     public void updateLastLoginTime(User user) {
         userRepository.update_last_login_time(user.getUser_id(), user.getLast_login_time());
     }
+
+
 
 }

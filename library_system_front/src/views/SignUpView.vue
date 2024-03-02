@@ -75,31 +75,42 @@
           return;
         }
         
-        ax.post( lsbackend + 'user/createUser',
-          {
-            "phone_number" : phonenumber,
-            "password" : password,
-            "username" : username,
-            "registaration_time" : Date.now(),
-            "last_login_time" : ""
-          })
-          .then((response) => {
-            let userId = response.data;
-            if (userId != null) {
-              alert("Sign up success");
-              this.redirect();
-            }
-            else{
-              alert("Sign up fail, please try again");
-            }
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-          .finally(function () {
-            console.log('finally');
-          })
-
+        ax.post( lsbackend + 'user/queryphonenumber',
+        {
+          "phone_number" : phonenumber
+        })
+        .then((response) => {
+      
+          if (response.data == 0){
+              ax.post( lsbackend + 'user/createuser',
+              {
+                "phone_number" : phonenumber,
+                "password" : password,
+                "username" : username,
+                "registaration_time" : Date.now(),
+                "last_login_time" : ""
+              })
+              .then((response) => {
+                let userId = response.data;
+                if (userId != null) {
+                  alert("Sign up success");
+                  this.redirect();
+                }
+                else{
+                  alert("Sign up fail, please try again");
+                }
+              })
+              .catch(function (error) {
+                console.log(error);
+              })
+              .finally(function () {
+                console.log('finally');
+              })
+          }
+          else{
+            alert('This phone number is already in use.')
+          }
+        });
       },
       checkNumber(event){
         event = (event) ? event : window.event;

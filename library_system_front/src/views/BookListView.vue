@@ -17,12 +17,12 @@
             <el-button
               size="small"
               @click="handleRent(scope.$index, scope.row)"
-              v-if="scope.row.status === '在庫'">Rent</el-button>
+              v-if="scope.row.status === '在庫'">可借閱</el-button>
             <el-button
             size="small"
             type="danger"
             @click="handleReturn(scope.$index, scope.row)"
-            v-if="scope.row.status !== '在庫'">Return</el-button>
+            v-if="scope.row.status !== '在庫'">已借閱</el-button>
           </template>
         </el-table-column>
       </el-table>
