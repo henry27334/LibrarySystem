@@ -5,7 +5,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `QUERY_USER`(
     in last_login_time varchar(45),
     OUT userid INT)
 BEGIN
-	SET @userid = (SELECT `user_id` FROM `user` WHERE `phone_number` = phone_number AND `password` = user_password);
+	SET @userid = (SELECT `user_id` FROM `user` WHERE `user`.`phone_number` = phone_number AND `user`.`password` = user_password);
 
 	IF (@userid) THEN
         UPDATE `user` SET `last_login_time` = last_login_time WHERE `user_id` = @ingregid;
