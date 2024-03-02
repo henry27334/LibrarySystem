@@ -3,8 +3,6 @@ package com.librarysystem.library_system_backend.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.librarysystem.library_system_backend.Entity.Inventory;
-import com.librarysystem.library_system_backend.Entity.User;
-import com.librarysystem.library_system_backend.Service.BookService;
 import com.librarysystem.library_system_backend.Service.InventoryService;
 
 import java.util.List;

@@ -12,6 +12,6 @@ import com.librarysystem.library_system_backend.Entity.Book;
 public interface BookRepository extends JpaRepository<Book, String>{
 
     @Procedure(procedureName = "QUERY_ALL_BOOKS")
-    public List<Book> query_books();
+    List<Book> query_books();
     
 }

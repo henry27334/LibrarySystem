@@ -34,5 +34,8 @@ public class User {
 
     @Column
     private String last_login_time;
+
+    @Column
+    private String salt;
 }
 

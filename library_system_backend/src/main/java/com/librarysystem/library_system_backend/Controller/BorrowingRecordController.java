@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.librarysystem.library_system_backend.Entity.BorrowingRecord;
 import com.librarysystem.library_system_backend.Service.BorrowingRecordService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -21,6 +20,7 @@ public class BorrowingRecordController {
 
     private BorrowingRecordService borrowingRecordService;
 
+    @Autowired
     public BorrowingRecordController(BorrowingRecordService borrowingRecordService) {
         this.borrowingRecordService = borrowingRecordService;
     }

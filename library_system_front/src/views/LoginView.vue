@@ -60,7 +60,7 @@
           "last_login_time" : Date.now()
         }
       )
-      .then( (response) => {
+      .then((response) => {
         let user_id = response.data;
         if (user_id != -1) {
           let d = new Date();
