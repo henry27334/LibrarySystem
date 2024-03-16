@@ -1,8 +1,8 @@
 # LibrarySystem
 
-### Starting Web Server
+### Start Web Server
 ```cmd
-cd library_systen_front
+cd library_system_front
 npm install
 npm run dev
 ```
